@@ -1,0 +1,270 @@
+
+
+Program-1: Write a program to check whether a given string is palindrome or not 
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        
+        Scanner obj = new Scanner(System.in);
+        String str = obj.nextLine();
+        String reversedString = ""; // making new empty string 
+		// Reversing a String
+        for(int i=0; i<str.length(); i++)
+        {
+            reversedString = str.charAt(i) + reversedString;
+        }
+        // Checking the string is Palindrome or not
+        if(str.equals(reversedString))
+        {
+            System.out.println(str+" is Palindrome");
+        }
+        else
+        {
+            System.out.println(str+" is Not a Palindrome");
+        }
+    }
+}
+
+Input: Guvi
+Output: Guvi is Not a Palindrome
+
+Input: racecar
+Output: racecar is Palindrome
+
+---------------------------------------------------------------------------------------
+
+Program-2: Write a program to print the reversed string 
+ import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        
+        Scanner obj = new Scanner(System.in);
+        String str = obj.nextLine();
+        String reversedString = ""; // making new empty string 
+		// Reversing a String
+        for(int i=0; i<str.length(); i++)
+        {
+            reversedString = str.charAt(i) + reversedString;
+        }
+		System.out.println("The reversed string of "+ str+" is " +reversedString);
+	}
+}
+
+Input: guvi
+Output: The reversed string of guvi is ivug
+
+---------------------------------------------------------------------------------------
+
+Program-3: Write a program to print the below pattern
+Sample input: 4
+Sample Output:
+1
+2 3
+4 5 6 
+7 8 9 10
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int n = obj.nextInt();
+        int temp=1;
+        for(int i=1; i<=n; i++)
+        {
+            for(int j=1; j<=i; j++)
+            {
+                System.out.print(temp+" ");
+                temp++;
+            }
+            System.out.println();
+        }
+    }
+} 
+
+Input: 4
+Output:
+1
+2 3
+4 5 6 
+7 8 9 10
+
+---------------------------------------------------------------------------------------
+
+Program-4: Write a program to print following pattern.
+Sample Input: 5
+Smaple Output:
+
+*   *
+ * *
+  *
+ * *
+*   *
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        
+        Scanner obj = new Scanner(System.in);
+        int n = obj.nextInt();
+        int n1= (n+1)/2;
+        for(int i=1; i<=n1; i++){
+            if(i==n1){
+                for(int spaces=1; spaces<=i-1;spaces++){
+                System.out.print(" ");
+            }
+            System.out.println("*");
+            }
+            else{
+                for(int spaces=1; spaces<=i-1;spaces++){
+                System.out.print(" ");
+            }
+            System.out.print("*");
+            for(int spaces=1; spaces<=2*(n1-i)-1;spaces++){
+                System.out.print(" ");
+            }
+            System.out.print("*");
+            System.out.println();
+            }
+        }
+        for(int i=1; i<=n1-1; i++){
+            for(int spaces=1; spaces<=n1-i-1;spaces++){
+                System.out.print(" ");
+            }
+            System.out.print("*");
+            for(int spaces=1; spaces<=2*i-1;spaces++){
+                System.out.print(" ");
+            }
+            System.out.print("*");
+            System.out.println();
+        }
+    }
+}
+Input: 5
+Output:
+
+*   *
+ * *
+  *
+ * *
+*   *
+
+---------------------------------------------------------------------------------------
+
+Program -5: Grading of Annamalai University Students
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        
+        Scanner obj = new Scanner(System.in);
+        int n = obj.nextInt();
+        
+       if(n>=0){
+                if(n<50){
+                    System.out.println("The Grade of Student is F");
+                }
+                else if(n<60){
+                    System.out.println("The Grade of Student is E");
+                }
+                else if(n<70){
+                    System.out.println("The Grade of Student is D");
+                }
+                else if(n<80){
+                    System.out.println("The Grade of Student is C");
+                }
+                else if(n<90){
+                    System.out.println("The Grade of Student is B");
+                }
+                else if(n<100){
+                    System.out.println("The Grade of Student is A");
+                }
+                else if(n==100){
+                    System.out.println("The Grade of Student is S");
+                }
+                else if(n>100){
+                    System.out.println("Invalid input");
+                }
+       }
+       else{
+           System.out.println("Negative number is not a valid input");
+       }
+    }
+}
+
+Input: 62
+Output: The Grade of Student is D
+Input: -25
+Output: Negative number is not a valid input
+
+---------------------------------------------------------------------------------------
+
+Program-6: Write a program to calculate the hotel Tariff. Room rent is 20% higher during peak season(April - June, Nov-Dec)
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        
+        Scanner obj = new Scanner(System.in);
+        int month = obj.nextInt();
+         int rent = obj.nextInt();
+          int days = obj.nextInt();
+          
+          int totalPrice = rent*days;
+          switch(month)
+          {
+              case 1: System.out.println(totalPrice); break;
+              case 2: System.out.println(totalPrice); break;
+              case 3: System.out.println(totalPrice); break;
+              case 4: System.out.println(1.2*totalPrice); break;
+              case 5: System.out.println(1.2*totalPrice); break;
+              case 6: System.out.println(1.2*totalPrice); break;
+              case 7: System.out.println(totalPrice); break;
+              case 8: System.out.println(totalPrice); break;
+              case 9: System.out.println(totalPrice); break;
+              case 10: System.out.println(totalPrice); break;
+              case 11: System.out.println(1.2*totalPrice); break;
+              case 12: System.out.println(1.2*totalPrice); break;
+          }
+    }
+}
+Input; 3 1500 2
+Output: 3000
+Input: 6 1500 2
+Output: 3600
+
+---------------------------------------------------------------------------------------
+
+Program-7: Write a program to print The Largest number among given three numbers
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        
+        Scanner obj = new Scanner(System.in);
+        int n1 = obj.nextInt();
+        int n2 = obj.nextInt();
+        int n3 = obj.nextInt();
+      
+      if(n1>n2 && n1>n3)
+        {
+          System.out.println("The Largest number among "+n1+" "+n2+" "+n3+" is "+n1);
+        }
+        else if(n2 > n3)
+          {
+               System.out.println("The Largest number among "+n1+" "+n2+" "+n3+" is "+n2);
+          }
+          else 
+          {
+              System.out.println("The Largest number among "+n1+" "+n2+" "+n3+" is "+n3);
+          }
+    }
+}
+
+Input: 6 9 2
+Output: The Largest number among 6 9 2 is 9
+
+
+        
+     
+
